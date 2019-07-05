@@ -31,6 +31,7 @@ public class AppMain {
         System.out.println(".......Hibernate Maven Example.......\n");
         try {
             sessionObj = buildSessionFactory().openSession();
+            System.out.println(sessionObj.isConnected());
             sessionObj.beginTransaction();
  
             for(int i = 101; i <= 105; i++) {
@@ -46,12 +47,14 @@ public class AppMain {
  
             // Committing The Transactions To The Database
             sessionObj.getTransaction().commit();
-        } catch(Exception sqlException) {
-            if(null != sessionObj.getTransaction()) {
+        } catch(Exception e) {
+        	e.printStackTrace();
+        	
+            if(sessionObj != null && null != sessionObj.getTransaction()) {
                 System.out.println("\n.......Transaction Is Being Rolled Back.......");
                 sessionObj.getTransaction().rollback();
             }
-            sqlException.printStackTrace();
+            
         } finally {
             if(sessionObj != null) {
                 sessionObj.close();
