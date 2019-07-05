@@ -10,9 +10,15 @@
  
         <!-- Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+<<<<<<< HEAD
         <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com:3306/RVqjgd87x0</property>
         <property name="hibernate.connection.username">RVqjgd87x0</property>
         <property name="hibernate.connection.password">selkJfaIFu</property>
+=======
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tutorialDb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+>>>>>>> refs/remotes/origin/master
         <property name="show_sql">true</property>
  
         <!-- Specifying Session Context -->
